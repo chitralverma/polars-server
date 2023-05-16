@@ -1,0 +1,21 @@
+polars-server:
+  api:
+    host: "localhost"
+    port: 3000
+    workers: 2
+    processes: 2
+    log-level: "INFO"
+
+  datasets:
+  - name: "ds1"
+    type: "parquet"
+    path: "/tmp/datasets/data.parquet"
+
+  - name: "ds2"
+    type: "csv"
+    path: "/tmp/datasets/data.csv"
+    options:
+      cache: false
+
+
+  output-mode: "json"
